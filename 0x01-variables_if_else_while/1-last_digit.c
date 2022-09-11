@@ -5,7 +5,7 @@
  * main - entry point
  * Description: the last digit of the number stored in the variable n
  * Return: 0
- */
+*/
 int main(void)
 {
 	int n, m;
