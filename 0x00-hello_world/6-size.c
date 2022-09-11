@@ -7,7 +7,7 @@
  *
  *And it is to return a 0 as output
  *Return: Always 0 (Success)
-*/
+ */
 
 int main(void)
 {
