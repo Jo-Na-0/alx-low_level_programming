@@ -1,6 +1,4 @@
-i#include <stdio.h>
-
-
+#include <stdio.h>
 
 /**
 * main - Gets the sum of mutliples of 3 or 5 until 1024.
