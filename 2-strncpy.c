@@ -1,6 +1,5 @@
 #include "main.h"
-
-
+#include <stdio.h>
 
 /**
 *_strncpy - copy strings
@@ -15,14 +14,9 @@
 */
 
 char *_strncpy(char *dest, char *src, int n)
-
 {
 
-
-
 	int j = 0;
-
-
 
 	for (j = 0; src[j] != '\0'; j++)
 
@@ -47,5 +41,4 @@ char *_strncpy(char *dest, char *src, int n)
 	}
 
 	return (dest);
-
 }
