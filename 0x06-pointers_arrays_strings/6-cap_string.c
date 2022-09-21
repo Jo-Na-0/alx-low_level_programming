@@ -9,16 +9,12 @@
 */
 
 char *cap_string(char *s)
-
 {
-
 	int i = 0;
 
 	int j;
 
 	char spc[] = {' ', '\t', '\n', ',', ';', '.', '!', '"', '(', ')', '{', '}'};
-
-
 
 	if (s[0] >= 'a' && s[0] <= 'z')
 
@@ -39,13 +35,10 @@ char *cap_string(char *s)
 			if (s[i - 1] == spc[j] && s[i] <= 122 && s[i] >= 97)
 
 				s[i] = s[i] - 32;
-
 		}
 
 		i++;
-
 	}
 
 	return (s);
-
 }
