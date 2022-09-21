@@ -30,4 +30,5 @@ for (; j < n; j++)
 dest[j] = '\0';
 }
 return (dest);
+
 }
