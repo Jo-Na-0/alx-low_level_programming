@@ -1,27 +1,28 @@
 #include "main.h"
 
 /**
-* _memset - Entry point
+*_strcat - appends strings
 *
-* Description - A function that fills memory with a constant byte
+*@dest: destination
 *
-*@s: the function accepts an input saved into s
+*@src: source
 *
-*@b: the function accepts an input saved into b
+*Return: dest
 *
-*@n: the function accepts an input saved into n
-*
-* Return: a char as success
 */
 
-char *_memset(char *s, char b, unsigned int n)
+char *_strcat(char *dest, char *src)
 {
-	unsigned int i = 0;
+	int i = 0;
+	int j = 0;
 
-	while (i < n)
+	while (dest[i] != '\0')
 	{
-		s[i] = b;
 		i++;
 	}
-	return (s);
+	for (j = 0; src[j] != '\0'; j++)
+	{
+		dest[i + j] = src[j];
+	}
+	return (dest);
 }
