@@ -1,12 +1,13 @@
-#include <main.h>
+
+
+#include "main.h"
 
 /**
-* cap_string - capitalize characters
-*
-* @s: string
-*
-* Return: string
-*/
+ *cap_string - capitalize characters
+ *@s: string
+ *
+ *Return: string
+ */
 
 char *cap_string(char *s)
 {
@@ -21,7 +22,6 @@ s[0] -= 32;
 while (s[i] != '\0')
 {
 for (j = 0; spc[j] != '\0'; j++)
-
 {
 if (s[i - 1] == spc[j] && s[i] <= 122 && s[i] >= 97)
 s[i] = s[i] - 32;
