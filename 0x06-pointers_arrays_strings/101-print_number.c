@@ -2,24 +2,32 @@
 #include <stdio.h>
 
 /**
-* print_number - prints number with _putchar
-*
-* Return: returns void
+ * print_number - prints number
+ * @n: the number to process.
+ *
 */
-
 void print_number(int n)
 {
-	unsigned int number;
+	unsigned int num;
 
-	number = n;
+	if (n < 10 && n >= 0)
+	{
+		_putchar('0' + n);
+		return;
+	}
 	if (n < 0)
 	{
-	_putchar('-');
-	number = -n;
+		num = -n;
+		_putchar('-');
 	}
-	if (number / 10 != 0)
+	else
 	{
-	print_number(number / 10);
+		num = n;
 	}
-	_putchar((number % 10) + '0');
+
+	if (num >= 10)
+	{
+		print_number(num / 10);
+	}
+	_putchar('0' + (num % 10));
 }
