@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * Date: Tue,Sep27.
+ * Date: Tue-Sep27-2022
  *
  * Author: Mutebi Jonathan
  *
@@ -10,12 +10,11 @@
 
 char *_memset(char *s, char b, unsigned int n)
 {
-	unsigned int i = 0;
+	unsigned int i;
 
-	while (i < n)
+	while (i = 0; i < n; i++)
 	{
 		s[i] = b;
-		i++;
 	}
 
 	return (s);
