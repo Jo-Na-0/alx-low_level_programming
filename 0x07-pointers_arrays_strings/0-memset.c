@@ -1,20 +1,19 @@
 #include "main.h"
-
 /**
- * Date: Tue-Sep27-2022
+ * _memset - Fill memory with a constant byte
+ * @s: memory area to fill
+ * @b: constant byte to fill
+ * @n: bytes of memory area to fill
  *
- * Author: Mutebi Jonathan
- *
- * Description: Function fills memory with a constant byte.
-*/
-
+ * Return: the memory area filled
+ */
 char *_memset(char *s, char b, unsigned int n)
 {
-	unsigned int i;
+	unsigned int a;
 
-	while (i = 0; i < n; i++)
+	for (a = 0; a < n; a++)
 	{
-		s[i] = b;
+		s[a] = b;
 	}
 
 	return (s);
