@@ -1,10 +1,8 @@
 #include "lists.h"
-
 /**
  * free_listint -frees memory from a list
  * @head: pointer to the list
  **/
-
 void free_listint(listint_t *head)
 {
 	listint_t *current, *next;
@@ -12,7 +10,7 @@ void free_listint(listint_t *head)
 	current = head;
 	while (current)
 	{
-		ext = current->next;
+		next = current->next;
 		free(current);
 		current = next;
 	}
