@@ -1,63 +1,69 @@
 #include "lists.h"
 
 /**
- * _ra - reallocates memory for an array of pointers
- * to the nodes in a linked list
- * @list: the old list to append
- * @size: size of the new list (always one more than the old list)
- * @new: new node to add to the list
+ * free_listp - frees a linked list
+ * @head: head of a list.
  *
- * Return: pointer to the new list
+ * Return: no return.
  */
-listint_t **_ra(listint_t **list, size_t size, listint_t *new)
+void free_listp(listp_t **head)
 {
-	listint_t **newlist;
-	size_t i;
+	listp_t *temp;
+	listp_t *curr;
 
-	newlist = malloc(size * sizeof(listint_t *));
-	if (newlist == NULL)
+	if (head != NULL)
 	{
-		free(list);
-		exit(98);
+		curr = *head;
+		while ((temp = curr) != NULL)
+		{
+			curr = curr->next;
+			free(temp);
+		}
+		*head = NULL;
 	}
-	for (i = 0; i < size - 1; i++)
-		newlist[i] = list[i];
-	newlist[i] = new;
-	free(list);
-	return (newlist);
 }
 
 /**
- * free_listint_safe - frees a listint_t linked list.
- * @head: double pointer to the start of the list
+ * print_listint_safe - prints a linked list.
+ * @head: head of a list.
  *
- * Return: the number of nodes in the list
+ * Return: number of nodes in the list.
  */
-size_t free_listint_safe(listint_t **head)
+size_t print_listint_safe(const listint_t *head)
 {
-	size_t i, num = 0;
-	listint_t **list = NULL;
-	listint_t *next;
+	size_t nnodes = 0;
+	listp_t *hptr, *new, *add;
 
-	if (head == NULL || *head == NULL)
-		return (num);
-	while (*head != NULL)
+	hptr = NULL;
+	while (head != NULL)
 	{
-		for (i = 0; i < num; i++)
+		new = malloc(sizeof(listp_t));
+
+		if (new == NULL)
+			exit(98);
+
+		new->p = (void *)head;
+		new->next = hptr;
+		hptr = new;
+
+		add = hptr;
+
+		while (add->next != NULL)
 		{
-			if (*head == list[i])
+			add = add->next;
+			if (head == add->p)
 			{
-				*head = NULL;
-				free(list);
-				return (num);
+				printf("-> [%p] %d\n", (void *)head, head->n);
+				free_listp(&hptr);
+				return (nnodes);
 			}
 		}
-		num++;
-		list = _ra(list, num, *head);
-		next = (*head)->next;
-		free(*head);
-		*head = next;
+
+		printf("[%p] %d\n", (void *)head, head->n);
+		head = head->next;
+		nnodes++;
 	}
-	free(list);
-	return (num);
+
+	free_listp(&hptr);
+	return (nnodes);
 }
